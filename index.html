@@ -8,45 +8,48 @@
     <title>Let's Make a Pizza</title>
   </head>
   <body>
-    <form id="formOne">
-      <input id="customerName" type="text" placeholder="Who is this pizza for?">
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="sausage">Sausage</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="chicken">Chicken</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="greenPeppers">Green Peppers</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
-      </div>
-      <select class="form-control" id="pizzaSize">
-        <option value="7">Small</option>
-        <option value="10">Medium</option>
-        <option value="14">Large</option>
-        <option value="20">Extra-Large</option>
-      </select>
-      <button type="submit" class="btn btn-success">Calculate Cost</button>
-    </form>
+    <div class="container">
+      <form id="formOne">
+        <input id="customerName" type="text" placeholder="Who is this pizza for?">
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="sausage">Sausage</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="chicken">Chicken</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="mushroom">Mushrooms</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="greenPepper">Green Peppers</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="olive">Olives</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="artichoke">Artichokes</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="anchovie">Anchovies</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="topping" value="garlic">Fresh Garlic</label>
+        </div>
+        <select class="form-control" id="pizzaSize">
+          <option value="7">Small</option>
+          <option value="10">Medium</option>
+          <option value="14">Large</option>
+          <option value="20">Extra-Large</option>
+        </select>
+        <button type="submit" class="btn btn-success">Calculate Cost</button>
+        <button id="newPizza" class="btn btn-danger">Add Another Pizza</button>
+      </form>
+    </div>
   </body>
 </html>

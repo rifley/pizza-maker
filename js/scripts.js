@@ -9,16 +9,16 @@ function Customer(name, pizzas) {
 }
 
 Pizza.prototype.cost = function() {
-  this.size = parseInt(this.size);
-  this.topping = parseInt(this.topping.length);
-  return (this.size+(this.topping*.5)-1);
+  var sizeCost = parseInt(this.size);
+  var toppingCost = parseInt(this.topping.length);
+  return (sizeCost+(toppingCost*.5)-1);
   }
 
 
 toppings=[];
-var customer;
-var newPizza;
 var total;
+var customerOne={};
+var pizzaOne={};
 $(function(){
 
 
@@ -30,19 +30,36 @@ $(function(){
   // pushing user toppings to an array
   $("#formOne").submit(function(event) {
     event.preventDefault();
-    debugger;
-    customer = new Customer(($("#customerName").val()),[]);
-    pizza = new Pizza(($("#pizzaSize").val()),[]);
+    // debugger;
+    customerOne = new Customer(($("#customerName").val()),[]);
+    pizzaOne = new Pizza(($("#pizzaSize").val()),[]);
     $("input:checkbox[name=topping]:checked").each(function(){
       var pizzaToppings = $(this).val();
       toppings.push(pizzaToppings);
     });
     toppings.forEach(function(topping){
-      pizza.topping.push(topping);
+      pizzaOne.topping.push(topping);
     });
-    finalTotal = pizza.cost();
-    console.log(finalTotal);
+    customerOne.pizzas.push(pizzaOne);
+    finalTotal = pizzaOne.cost();
+
 });
+  $("#newPizza").click(function(event){
+    event.preventDefault();
+    var newToppings=[];
+    var newPizza = new Pizza(($("#pizzaSize").val()),[]);
+    console.log(newPizza);
+    $("input:checkbox[name=topping]:checked").each(function(){
+      var pizzaTopping = $(this).val();
+      newToppings.push(pizzaTopping);
+    });
+    console.log(newToppings);
+    newToppings.forEach(function(topping){
+      newPizza.topping.push(topping);
+    });
+    customerOne.pizzas.push(newPizza);
+    console.log(customerOne);
+  });
 });
 
 

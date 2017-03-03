@@ -1,0 +1,10 @@
+#pizzaSize {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+#customerName {
+  margin-top: 30px;
+  font-family: monospace;
+  width: 300px;
+}

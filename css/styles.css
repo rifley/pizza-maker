@@ -8,3 +8,22 @@
   font-family: monospace;
   width: 300px;
 }
+
+#totalOut {
+  display: none;
+}
+
+#newPizza {
+  display: none;
+}
+
+.customerOrder {
+  border: solid 3px black;
+  width: 300px;
+}
+.customerOrder {
+  text-align: center;
+}
+.customerOrder li {
+  text-align: left;
+}

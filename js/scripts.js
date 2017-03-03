@@ -11,28 +11,25 @@ function Customer(name, pizzas) {
 Pizza.prototype.cost = function() {
   var sizeCost = parseInt(this.size);
   var toppingCost = parseInt(this.topping.length);
-  return (sizeCost+(toppingCost*.5)-1);
+  var workingTotal = (sizeCost+(toppingCost*.5)-1);
+  if (workingTotal%1!==0) {
+    return workingTotal + "0";
+  }else {
+    return workingTotal;
   }
+}
 
-
+//front end
 toppings=[];
 var total;
-var customerOne={};
-var pizzaOne={};
+var customerOne;
+
 $(function(){
-
-
-
-
-
-
-
-  // pushing user toppings to an array
   $("#formOne").submit(function(event) {
     event.preventDefault();
     // debugger;
     customerOne = new Customer(($("#customerName").val()),[]);
-    pizzaOne = new Pizza(($("#pizzaSize").val()),[]);
+    var pizzaOne = new Pizza(($("#pizzaSize").val()),[]);
     $("input:checkbox[name=topping]:checked").each(function(){
       var pizzaToppings = $(this).val();
       toppings.push(pizzaToppings);
@@ -42,7 +39,13 @@ $(function(){
     });
     customerOne.pizzas.push(pizzaOne);
     finalTotal = pizzaOne.cost();
-
+    $("#customerName").hide();
+    $("#calculate").hide();
+    $("#newPizza").show();
+    $("#totalOut").show();
+    $("#nameOut").text(customerOne.name);
+    $("#pizzaOut").append("<li>"+pizzaOne.topping[0]+"</li>");
+    $("#totalCost").text(pizzaOne.cost());
 });
   $("#newPizza").click(function(event){
     event.preventDefault();
@@ -61,6 +64,3 @@ $(function(){
     console.log(customerOne);
   });
 });
-
-
-    // var size = $("input:checkbox[name=premTopping]:checked").val();

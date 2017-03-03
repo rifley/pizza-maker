@@ -22,8 +22,9 @@ open index.html
 ## Specifications
 
 |Behavior| input | output|
-|--------|:-----:|:-----:|
-|
+|--------|-------|-------|
+|store customer preferences| size: small; toppings: sausage, garlic| pizza {size: small, toppings:[sausage, garlic]}|
+|sum costs| size: small; toppings: sausage, garlic| cost: 7|
 
 
 

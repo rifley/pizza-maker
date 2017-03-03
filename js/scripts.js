@@ -1,6 +1,7 @@
-function Pizza(size, topping) {
+function Pizza(size, topping, cost) {
   this.size= size;
   this.topping= topping;
+  this.cost= cost;
 }
 
 function Customer(name, pizzas) {
@@ -8,13 +9,16 @@ function Customer(name, pizzas) {
   this.pizzas= pizzas;
 }
 
-Pizza.prototype.cost = function() {
+Pizza.prototype.findCost = function() {
   var sizeCost = parseInt(this.size);
   var toppingCost = parseInt(this.topping.length);
-  var workingTotal = (sizeCost+(toppingCost*.5)-1);
-  if (workingTotal%1!==0) {
+  var workingTotal = (sizeCost+(toppingCost*.5));
+  console.log(toppingCost);
+  if (workingTotal%1!==0 && workingTotal>=7) {
+    this.cost = workingTotal;
     return workingTotal + "0";
-  }else {
+  } else {
+    this.cost = workingTotal;
     return workingTotal;
   }
 }
@@ -23,13 +27,14 @@ Pizza.prototype.cost = function() {
 toppings=[];
 var total;
 var customerOne;
+var pizzaOne;
 
 $(function(){
   $("#formOne").submit(function(event) {
     event.preventDefault();
     // debugger;
     customerOne = new Customer(($("#customerName").val()),[]);
-    var pizzaOne = new Pizza(($("#pizzaSize").val()),[]);
+    var pizzaOne = new Pizza(($("#pizzaSize").val()),[],"");
     $("input:checkbox[name=topping]:checked").each(function(){
       var pizzaToppings = $(this).val();
       toppings.push(pizzaToppings);
@@ -38,14 +43,19 @@ $(function(){
       pizzaOne.topping.push(topping);
     });
     customerOne.pizzas.push(pizzaOne);
-    finalTotal = pizzaOne.cost();
+    finalTotal = pizzaOne.findCost();
     $("#customerName").hide();
     $("#calculate").hide();
     $("#newPizza").show();
     $("#totalOut").show();
     $("#nameOut").text(customerOne.name);
-    $("#pizzaOut").append("<li>"+pizzaOne.topping[0]+"</li>");
-    $("#totalCost").text(pizzaOne.cost());
+    customerOne.pizzas.forEach(function(pizza){
+      pizza.topping.forEach(function(toppings){
+        $("#pizzaOut").append("<li>"+toppings+"</li>")
+      });
+    });
+    // $("#pizzaOut").append("<li>"+pizzaOne.topping[0]+"</li>");
+    $("#totalCost").text(pizzaOne.findCost());
 });
   $("#newPizza").click(function(event){
     event.preventDefault();
@@ -62,5 +72,13 @@ $(function(){
     });
     customerOne.pizzas.push(newPizza);
     console.log(customerOne);
+    $("#pizzaOut").empty();
+    customerOne.pizzas.forEach(function(pizza){
+      pizza.topping.forEach(function(toppings){
+        $("#pizzaOut").append("<li>"+toppings+"</li>")
+      });
+    });
+    //just about there
+    $("#totalCost").text(.findCost());
   });
 });

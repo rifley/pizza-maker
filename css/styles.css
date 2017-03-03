@@ -20,10 +20,28 @@
 .customerOrder {
   border: solid 3px black;
   width: 300px;
+  margin-top: 30px;
 }
 .customerOrder {
   text-align: center;
 }
 .customerOrder li {
   text-align: left;
+}
+
+#pizzaSizes {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: solid 2px salmon;
+  width: 320px;
+
+}
+
+.toppings {
+  margin-top: 30px;
+  border: solid 2px salmon;
+  width: 320px;
+}
+.toppings h4 {
+  margin-left: 30%;
 }

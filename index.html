@@ -9,28 +9,44 @@
   </head>
   <body>
     <form id="formOne">
+      <input id="customerName" type="text" placeholder="Who is this pizza for?">
       <div class="checkbox">
         <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label>
       </div>
       <div class="checkbox">
         <label><input type="checkbox" name="topping" value="sausage">Sausage</label>
       </div>
-      <div class="checkbox disabled">
+      <div class="checkbox">
+        <label><input type="checkbox" name="topping" value="chicken">Chicken</label>
+      </div>
+      <div class="checkbox">
         <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
       </div>
-      <button type="submit" name="button"></button>
-    </form>
-    <form id="formTwo">
       <div class="checkbox">
-        <label><input type="checkbox" name="premTopping" value="steak">Steak</label>
+        <label><input type="checkbox" name="topping" value="greenPeppers">Green Peppers</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" name="premTopping" value="chicken">Chicken</label>
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
       </div>
-      <div class="checkbox disabled">
-        <label><input type="checkbox" name="premTopping" value="egg">Egg</label>
+      <div class="checkbox">
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
       </div>
-      <button type="submit" name="button"></button>
+      <div class="checkbox">
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label>
+      </div>
+      <select class="form-control" id="pizzaSize">
+        <option value="7">Small</option>
+        <option value="10">Medium</option>
+        <option value="14">Large</option>
+        <option value="20">Extra-Large</option>
+      </select>
+      <button type="submit" class="btn btn-success">Calculate Cost</button>
     </form>
   </body>
 </html>

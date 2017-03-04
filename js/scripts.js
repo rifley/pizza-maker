@@ -79,8 +79,16 @@ $(function(){
     //   });
     // });
     //just about there
+
+    //additional pizza cost
+    // var newTotal;
+    // for (var i = 0; i < customerOne.pizzas.length; i++) {
+    //   newTotal = customerOne.pizzas[i].findCost();
+    //   var newestTotal = newestTotal += newTotal;
+    // };
+    // console.log(newestTotal);
     total = newPizza.findCost();
-    console.log(total);
     $("#totalCost").text(total);
+
   });
 });

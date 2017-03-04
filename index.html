@@ -13,18 +13,21 @@
         <div class="col-md-7" id="totalOut">
           <div class="customerOrder">
             <h2>Current Order</h2>
-            <h4 id="nameOut"></h4>
+            <h4>Customer Name: <span id="nameOut"></span></h4>
             <ul id="pizzaOut">
 
             </ul>
             <h3>Your total is $<span id="totalCost"></span>. Enjoy!</h3>
           </div>
+          <img src="img/flower.jpg" alt="pizza-sunflower">
         </div>
         <div id="prompt" class="col-md-5 pizzas">
           <form id="formOne">
+            <h1>Lets Make a Pizza!</h1>
+            <img id="cheesey" src="img/pizza.png" alt="pizza">
             <input id="customerName" type="text" placeholder="Name for Order">
             <div class="row toppings">
-              <h4>Toppings</h4>
+              <h4>Toppings: $.50 each</h4>
               <div class="col-md-6">
                 <div class="checkbox">
                   <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label>
@@ -70,7 +73,7 @@
               </select>
             </div>
             <button id="calculate" type="submit" class="btn btn-success">Total</button>
-            <button id="newPizza" class="btn btn-danger">Add Another Pizza</button>
+            <button id="newPizza" class="btn btn-danger"><span id="soon">Add Another Pizza</span></button>
           </form>
         </div>
       </div>

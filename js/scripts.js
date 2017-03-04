@@ -1,7 +1,7 @@
-function Pizza(size, topping, cost) {
+function Pizza(size, topping) {
   this.size= size;
   this.topping= topping;
-  this.cost= cost;
+  // this.cost= cost;
 }
 
 function Customer(name, pizzas) {
@@ -13,12 +13,11 @@ Pizza.prototype.findCost = function() {
   var sizeCost = parseInt(this.size);
   var toppingCost = parseInt(this.topping.length);
   var workingTotal = (sizeCost+(toppingCost*.5));
-  console.log(toppingCost);
   if (workingTotal%1!==0 && workingTotal>=7) {
-    this.cost = workingTotal;
+    // this.cost = workingTotal;
     return workingTotal + "0";
   } else {
-    this.cost = workingTotal;
+    // this.cost = workingTotal;
     return workingTotal;
   }
 }
@@ -49,11 +48,12 @@ $(function(){
     $("#newPizza").show();
     $("#totalOut").show();
     $("#nameOut").text(customerOne.name);
-    customerOne.pizzas.forEach(function(pizza){
-      pizza.topping.forEach(function(toppings){
-        $("#pizzaOut").append("<li>"+toppings+"</li>")
-      });
-    });
+    //adding pizza content to output
+    // customerOne.pizzas.forEach(function(pizza){
+    //   pizza.topping.forEach(function(toppings){
+    //     $("#pizzaOut").append("<li>"+toppings+"</li>")
+    //   });
+    // });
     // $("#pizzaOut").append("<li>"+pizzaOne.topping[0]+"</li>");
     $("#totalCost").text(pizzaOne.findCost());
 });
@@ -71,14 +71,16 @@ $(function(){
       newPizza.topping.push(topping);
     });
     customerOne.pizzas.push(newPizza);
-    console.log(customerOne);
-    $("#pizzaOut").empty();
-    customerOne.pizzas.forEach(function(pizza){
-      pizza.topping.forEach(function(toppings){
-        $("#pizzaOut").append("<li>"+toppings+"</li>")
-      });
-    });
+    //adding pizza content to output
+    // $("#pizzaOut").empty();
+    // customerOne.pizzas.forEach(function(pizza){
+    //   pizza.topping.forEach(function(toppings){
+    //     $("#pizzaOut").append("<li>"+toppings+"</li>")
+    //   });
+    // });
     //just about there
-    $("#totalCost").text(.findCost());
+    total = newPizza.findCost();
+    console.log(total);
+    $("#totalCost").text(total);
   });
 });
